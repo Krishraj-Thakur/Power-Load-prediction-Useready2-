@@ -156,6 +156,7 @@ LightGBM makes about 28 errors on 2,976 test readings, and all of them fall on t
 - **Differences between the tree models are small** (a few hundredths of a point on 2,976 highly similar rows) and should not be read as a reliable ranking.
 - **A few corrupted values may remain.** Some days have a single very large usage value that survived the long-decimal filter (for example one otherwise-idle day with a maximum of 104.7 kWh), and the max feature is sensitive to such spikes.
 - **No hyperparameter tuning** was done beyond fixed reasonable settings.
+- **Day-level features use the whole day**, including readings after the one being classified. This is fine for labelling recorded data but would not work for real-time prediction.
 
 ---
 
